@@ -248,7 +248,7 @@
                     { "end": "21.28","start": "21.13","text": "مَشْغُولَةٌ؛" },
                     { "end": "22.20","start": "22.00","text": "تُعِدُّ" },
                     { "end": "22.50","start": "22.26","text": "أَشْهَى" },
-                    { "end": "23.20","start": "22.51","text": "المأْكُولَاتِ" },
+                    { "end": "23.20","start": "22.51","text": "المأْكُولَاتِ." },
 
                 ],
                 4 : [/*4*/
@@ -439,13 +439,15 @@
                 audioPlayer.ontimeupdate = (event) => {
                     syncData[id].forEach(function(element, index, array){
 
-               
-                      
+                        var page_id = $("#latest_slide").val();
+                        if( page_id == 14)
+                        document.getElementById("bb-nav-next").style.display = "none";
                         subtitles.children[index].style.color = '#212121';
                        
                         
                         if( audioPlayer.currentTime >= element.start && audioPlayer.currentTime <= element.end )
                             subtitles.children[index].style.color = '#b50808';
+                            
 
                     });
 
